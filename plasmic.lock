@@ -1,0 +1,80 @@
+{
+  "projects": [
+    {
+      "projectId": "28Ba3BDvRe7EiWdfFNnLB6",
+      "version": "2.0.1",
+      "dependencies": {},
+      "lang": "ts",
+      "fileLocks": [
+        {
+          "assetId": "28Ba3BDvRe7EiWdfFNnLB6",
+          "type": "projectCss",
+          "checksum": "06dab28be1d7e0fe1dcd6bae7d78adeb"
+        }
+      ],
+      "codegenVersion": "0.0.1"
+    },
+    {
+      "projectId": "dg9YtSNXc6dazeT5TWG9ym",
+      "version": "latest",
+      "dependencies": {
+        "28Ba3BDvRe7EiWdfFNnLB6": "2.0.1"
+      },
+      "lang": "ts",
+      "fileLocks": [
+        {
+          "type": "globalVariant",
+          "assetId": "33huqbfL6RsH_",
+          "checksum": "5a8457020bb342622577a0aebd353443"
+        },
+        {
+          "assetId": "dg9YtSNXc6dazeT5TWG9ym",
+          "type": "projectCss",
+          "checksum": "60d3f5419ee2b38d3ff210dc0ecf9b1e"
+        },
+        {
+          "type": "renderModule",
+          "assetId": "hjoGpmwmLZd2_",
+          "checksum": "cb29c0ecb506dfba07cbade054f1df8f"
+        },
+        {
+          "type": "cssRules",
+          "assetId": "hjoGpmwmLZd2_",
+          "checksum": "cb29c0ecb506dfba07cbade054f1df8f"
+        },
+        {
+          "type": "renderModule",
+          "assetId": "8Is3JhhhO8",
+          "checksum": "c2981ae7682d23bfcda5eda0cbe0c48c"
+        },
+        {
+          "type": "cssRules",
+          "assetId": "8Is3JhhhO8",
+          "checksum": "c2981ae7682d23bfcda5eda0cbe0c48c"
+        },
+        {
+          "type": "icon",
+          "assetId": "acbDaG0GYIn_5",
+          "checksum": "b99201868cec6c0b7c1a3360c139a995"
+        },
+        {
+          "type": "icon",
+          "assetId": "5Xl52El9D",
+          "checksum": "4f7d40a7340d7be2bd4999036bd64717"
+        },
+        {
+          "type": "icon",
+          "assetId": "eYsRcLe4eP",
+          "checksum": "822dcfb8b50dd835ccedbb2bfbd1da61"
+        },
+        {
+          "type": "image",
+          "assetId": "HdYR4V1d-P",
+          "checksum": "53934e4180e0edfcc12cf3ed9e5ba4fa"
+        }
+      ],
+      "codegenVersion": "0.0.1"
+    }
+  ],
+  "cliVersion": "0.1.176"
+}

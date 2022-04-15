@@ -1,0 +1,149 @@
+{
+  "props": [
+    {
+      "name": "H1",
+      "type": "fontsize",
+      "value": "2rem",
+      "category": "fontsize",
+      "meta": {
+        "projectId": "dg9YtSNXc6dazeT5TWG9ym",
+        "id": "2MHxuszbw"
+      }
+    },
+    {
+      "name": "H2",
+      "type": "fontsize",
+      "value": "1.88rem",
+      "category": "fontsize",
+      "meta": {
+        "projectId": "dg9YtSNXc6dazeT5TWG9ym",
+        "id": "fEH6WrN-X"
+      }
+    },
+    {
+      "name": "H3",
+      "type": "fontsize",
+      "value": "1.5rem",
+      "category": "fontsize",
+      "meta": {
+        "projectId": "dg9YtSNXc6dazeT5TWG9ym",
+        "id": "Rrd9c8WrQ"
+      }
+    },
+    {
+      "name": "bg",
+      "type": "spacing",
+      "value": "18px",
+      "category": "spacing",
+      "meta": {
+        "projectId": "dg9YtSNXc6dazeT5TWG9ym",
+        "id": "UtVLBbMd2"
+      }
+    },
+    {
+      "name": "default",
+      "type": "fontfamily",
+      "value": "Open Sans",
+      "category": "fontfamily",
+      "meta": {
+        "projectId": "dg9YtSNXc6dazeT5TWG9ym",
+        "id": "04ajQz-J6"
+      }
+    },
+    {
+      "name": "lg",
+      "type": "spacing",
+      "value": "12px",
+      "category": "spacing",
+      "meta": {
+        "projectId": "dg9YtSNXc6dazeT5TWG9ym",
+        "id": "sidvsJqxm"
+      }
+    },
+    {
+      "name": "main",
+      "type": "lineheight",
+      "value": "1",
+      "category": "lineheight",
+      "meta": {
+        "projectId": "dg9YtSNXc6dazeT5TWG9ym",
+        "id": "ngn0tetV4"
+      }
+    },
+    {
+      "name": "md",
+      "type": "spacing",
+      "value": "8px",
+      "category": "spacing",
+      "meta": {
+        "projectId": "dg9YtSNXc6dazeT5TWG9ym",
+        "id": "n6bJ9l3LK"
+      }
+    },
+    {
+      "name": "meta",
+      "type": "fontsize",
+      "value": "0.75rem",
+      "category": "fontsize",
+      "meta": {
+        "projectId": "dg9YtSNXc6dazeT5TWG9ym",
+        "id": "q-pt3uES7"
+      }
+    },
+    {
+      "name": "normal",
+      "type": "fontsize",
+      "value": "1rem",
+      "category": "fontsize",
+      "meta": {
+        "projectId": "dg9YtSNXc6dazeT5TWG9ym",
+        "id": "rXKgNWohu"
+      }
+    },
+    {
+      "name": "sm",
+      "type": "spacing",
+      "value": "4px",
+      "category": "spacing",
+      "meta": {
+        "projectId": "dg9YtSNXc6dazeT5TWG9ym",
+        "id": "oL4jBQYQ7"
+      }
+    },
+    {
+      "name": "title",
+      "type": "fontfamily",
+      "value": "Source Sans Pro",
+      "category": "fontfamily",
+      "meta": {
+        "projectId": "dg9YtSNXc6dazeT5TWG9ym",
+        "id": "nrbVkyncv"
+      }
+    },
+    {
+      "name": "wide",
+      "type": "lineheight",
+      "value": "1.5",
+      "category": "lineheight",
+      "meta": {
+        "projectId": "dg9YtSNXc6dazeT5TWG9ym",
+        "id": "MvbL_CBMF"
+      }
+    },
+    {
+      "name": "xl",
+      "type": "spacing",
+      "value": "24px",
+      "category": "spacing",
+      "meta": {
+        "projectId": "dg9YtSNXc6dazeT5TWG9ym",
+        "id": "KXz4admYf"
+      }
+    }
+  ],
+  "global": {
+    "meta": {
+      "source": "plasmic.app"
+    }
+  }
+}
