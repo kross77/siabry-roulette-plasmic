@@ -56,7 +56,6 @@ export type PlasmicHomepage__OverridesType = {
   root?: p.Flex<"div">;
   freeBox?: p.Flex<"div">;
   logo?: p.Flex<"svg">;
-  text?: p.Flex<"div">;
 };
 
 export interface DefaultHomepageProps {}
@@ -111,12 +110,20 @@ function PlasmicHomepage__RenderFunc(props: {
             />
 
             <div
-              data-plasmic-name={"text"}
-              data-plasmic-override={overrides.text}
               className={classNames(
                 projectcss.all,
                 projectcss.__wab_text,
-                sty.text
+                sty.text__blQdJ
+              )}
+            >
+              {"Каманда SIABRY.ORG, вітае вас!!! "}
+            </div>
+
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__yosAd
               )}
             >
               {"Сайт ў распрацоўцы. Хутка тут будзе нешта цікавае..."}
@@ -129,10 +136,9 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "freeBox", "logo", "text"],
-  freeBox: ["freeBox", "logo", "text"],
-  logo: ["logo"],
-  text: ["text"]
+  root: ["root", "freeBox", "logo"],
+  freeBox: ["freeBox", "logo"],
+  logo: ["logo"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -141,7 +147,6 @@ type NodeDefaultElementType = {
   root: "div";
   freeBox: "div";
   logo: "svg";
-  text: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -203,7 +208,6 @@ export const PlasmicHomepage = Object.assign(
     // Helper components rendering sub-elements
     freeBox: makeNodeComponent("freeBox"),
     logo: makeNodeComponent("logo"),
-    text: makeNodeComponent("text"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
