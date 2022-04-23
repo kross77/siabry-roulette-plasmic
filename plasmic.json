@@ -7,7 +7,7 @@
   },
   "style": {
     "scheme": "css-modules",
-    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.css"
+    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.module.css"
   },
   "images": {
     "scheme": "public-files",
@@ -158,7 +158,8 @@
           "name": "Tabs",
           "componentImportPath": "@plasmicpkgs/antd"
         }
-      ]
+      ],
+      "jsBundleThemes": []
     },
     {
       "projectId": "dg9YtSNXc6dazeT5TWG9ym",
@@ -192,6 +193,33 @@
           "cssFilePath": "plasmic/siabry_roulette/PlasmicSignIn.module.css",
           "scheme": "blackbox",
           "componentType": "page"
+        },
+        {
+          "id": "u1DvWpKgNeq",
+          "name": "Button",
+          "type": "managed",
+          "projectId": "dg9YtSNXc6dazeT5TWG9ym",
+          "renderModuleFilePath": "plasmic/siabry_roulette/PlasmicButton.tsx",
+          "importSpec": {
+            "modulePath": "Button.tsx"
+          },
+          "cssFilePath": "plasmic/siabry_roulette/PlasmicButton.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "button"
+        },
+        {
+          "id": "hBQdWS-R4a9",
+          "name": "Roulette",
+          "type": "managed",
+          "projectId": "dg9YtSNXc6dazeT5TWG9ym",
+          "renderModuleFilePath": "plasmic/siabry_roulette/PlasmicRoulette.tsx",
+          "importSpec": {
+            "modulePath": "../pages/roulette.tsx"
+          },
+          "cssFilePath": "plasmic/siabry_roulette/PlasmicRoulette.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
         }
       ],
       "icons": [
@@ -209,6 +237,21 @@
           "id": "eYsRcLe4eP",
           "name": "G4682Icon",
           "moduleFilePath": "plasmic/siabry_roulette/icons/PlasmicIcon__G4682.tsx"
+        },
+        {
+          "id": "Q-5LfjBcmfs",
+          "name": "ChecksvgIcon",
+          "moduleFilePath": "plasmic/siabry_roulette/icons/PlasmicIcon__Checksvg.tsx"
+        },
+        {
+          "id": "vDlkk4NcY5X",
+          "name": "IconIcon",
+          "moduleFilePath": "plasmic/siabry_roulette/icons/PlasmicIcon__Icon.tsx"
+        },
+        {
+          "id": "mRrwTVQ6oL",
+          "name": "Icon2Icon",
+          "moduleFilePath": "plasmic/siabry_roulette/icons/PlasmicIcon__Icon2.tsx"
         }
       ],
       "images": [
@@ -237,6 +280,6 @@
   "nextjsConfig": {
     "pagesDir": "../pages"
   },
-  "cliVersion": "0.1.176",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.176/dist/plasmic.schema.json"
+  "cliVersion": "0.1.178",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.178/dist/plasmic.schema.json"
 }

@@ -34,6 +34,7 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
+import Button from "../../Button"; // plasmic-import: u1DvWpKgNeq/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -42,12 +43,24 @@ import sty from "./PlasmicSignIn.module.css"; // plasmic-import: 8Is3JhhhO8/css
 
 import GroupIcon from "./icons/PlasmicIcon__Group"; // plasmic-import: 5Xl52El9D/icon
 import G4682Icon from "./icons/PlasmicIcon__G4682"; // plasmic-import: eYsRcLe4eP/icon
+import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: Q-5LfjBcmfs/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: vDlkk4NcY5X/icon
 
-export type PlasmicSignIn__VariantMembers = {};
+export type PlasmicSignIn__VariantMembers = {
+  loading: "loading";
+  logout: "logout";
+};
 
-export type PlasmicSignIn__VariantsArgs = {};
+export type PlasmicSignIn__VariantsArgs = {
+  loading?: SingleBooleanChoiceArg<"loading">;
+  logout?: SingleBooleanChoiceArg<"logout">;
+};
+
 type VariantPropType = keyof PlasmicSignIn__VariantsArgs;
-export const PlasmicSignIn__VariantProps = new Array<VariantPropType>();
+export const PlasmicSignIn__VariantProps = new Array<VariantPropType>(
+  "loading",
+  "logout"
+);
 
 export type PlasmicSignIn__ArgsType = {};
 type ArgPropType = keyof PlasmicSignIn__ArgsType;
@@ -64,11 +77,12 @@ export type PlasmicSignIn__OverridesType = {
   rectangle2?: p.Flex<"div">;
   rectangle1?: p.Flex<"div">;
   frame2?: p.Flex<"div">;
-  img?: p.Flex<typeof p.PlasmicImg>;
   facebookBtn?: p.Flex<"div">;
   group2?: p.Flex<"div">;
   rectangle3?: p.Flex<"div">;
   rectangle4?: p.Flex<"div">;
+  logoutBtn?: p.Flex<typeof Button>;
+  loading?: p.Flex<"div">;
 };
 
 export interface DefaultSignInProps {}
@@ -105,7 +119,11 @@ function PlasmicSignIn__RenderFunc(props: {
             projectcss.plasmic_default_styles,
             projectcss.plasmic_mixins,
             projectcss.plasmic_tokens,
-            sty.root
+            sty.root,
+            {
+              [sty.rootloading]: hasVariant(variants, "loading", "loading"),
+              [sty.rootlogout]: hasVariant(variants, "logout", "logout")
+            }
           )}
         >
           {true ? (
@@ -114,7 +132,9 @@ function PlasmicSignIn__RenderFunc(props: {
               data-plasmic-name={"freeBox"}
               data-plasmic-override={overrides.freeBox}
               hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox)}
+              className={classNames(projectcss.all, sty.freeBox, {
+                [sty.freeBoxlogout]: hasVariant(variants, "logout", "logout")
+              })}
             >
               {true ? (
                 <p.Stack
@@ -153,143 +173,255 @@ function PlasmicSignIn__RenderFunc(props: {
                     </div>
                   </p.Stack>
 
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__fv9Ys
-                    )}
-                  >
-                    {
-                      "Вітаем, любасныя і дарагія сябры!\nМы запускаем новы міні праект, для таго каб зрабіць нас яшчэ бліжэй, для таго каб выключыць рознага роду вычварэнцаў, мы патрабуем уваходу!"
-                    }
-                  </div>
+                  {(
+                    hasVariant(variants, "loading", "loading") ? true : true
+                  ) ? (
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__fv9Ys,
+                        {
+                          [sty.textloading__fv9YsdC8Vr]: hasVariant(
+                            variants,
+                            "loading",
+                            "loading"
+                          ),
+                          [sty.textlogout__fv9Ys0HqGl]: hasVariant(
+                            variants,
+                            "logout",
+                            "logout"
+                          )
+                        }
+                      )}
+                    >
+                      {hasVariant(variants, "logout", "logout") ? (
+                        <React.Fragment>
+                          <React.Fragment>{""}</React.Fragment>
+                          <span
+                            className={
+                              "plasmic_default__all plasmic_default__span"
+                            }
+                            style={{ fontWeight: 700 }}
+                          >
+                            {"Вітаем"}
+                          </span>
+                          <React.Fragment>
+                            {
+                              ", любасныя і дарагія сябры!\nМы запускаем новы міні праект, для таго каб зрабіць нас яшчэ бліжэй, для таго каб выключыць рознага роду вычварэнцаў, мы патрабуем уваходу!"
+                            }
+                          </React.Fragment>
+                        </React.Fragment>
+                      ) : (
+                        "Вітаем, любасныя і дарагія сябры!\nМы запускаем новы міні праект, для таго каб зрабіць нас яшчэ бліжэй, для таго каб выключыць рознага роду вычварэнцаў, мы патрабуем уваходу!"
+                      )}
+                    </div>
+                  ) : null}
                 </p.Stack>
               ) : null}
-
-              <p.Stack
-                as={"div"}
-                data-plasmic-name={"button"}
-                data-plasmic-override={overrides.button}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.button)}
-              >
-                <div
-                  data-plasmic-name={"googleBtn"}
-                  data-plasmic-override={overrides.googleBtn}
-                  className={classNames(projectcss.all, sty.googleBtn)}
+              {(hasVariant(variants, "loading", "loading") ? true : true) ? (
+                <p.Stack
+                  as={"div"}
+                  data-plasmic-name={"button"}
+                  data-plasmic-override={overrides.button}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.button, {
+                    [sty.buttonloading]: hasVariant(
+                      variants,
+                      "loading",
+                      "loading"
+                    ),
+                    [sty.buttonlogout]: hasVariant(variants, "logout", "logout")
+                  })}
                 >
-                  <div
-                    data-plasmic-name={"rectangle2"}
-                    data-plasmic-override={overrides.rectangle2}
-                    className={classNames(projectcss.all, sty.rectangle2)}
-                  />
-
-                  <div
-                    data-plasmic-name={"rectangle1"}
-                    data-plasmic-override={overrides.rectangle1}
-                    className={classNames(projectcss.all, sty.rectangle1)}
-                  />
-
-                  <p.Stack
-                    as={"div"}
-                    data-plasmic-name={"frame2"}
-                    data-plasmic-override={overrides.frame2}
-                    hasGap={true}
-                    className={classNames(projectcss.all, sty.frame2)}
-                  >
-                    <p.PlasmicImg
-                      data-plasmic-name={"img"}
-                      data-plasmic-override={overrides.img}
-                      alt={""}
-                      className={classNames(sty.img)}
-                      displayHeight={"24px" as const}
-                      displayMaxHeight={"none" as const}
-                      displayMaxWidth={"100%" as const}
-                      displayMinHeight={"0" as const}
-                      displayMinWidth={"0" as const}
-                      displayWidth={"23.489px" as const}
-                      loading={"lazy" as const}
-                      src={{
-                        src: "/plasmic/siabry_roulette/images/group2.svg",
-                        fullWidth: 23.489,
-                        fullHeight: 24,
-                        aspectRatio: 1000000
-                      }}
-                    />
-
+                  {(hasVariant(variants, "logout", "logout") ? true : true) ? (
                     <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__opcY7
-                      )}
+                      data-plasmic-name={"googleBtn"}
+                      data-plasmic-override={overrides.googleBtn}
+                      className={classNames(projectcss.all, sty.googleBtn, {
+                        [sty.googleBtnlogout]: hasVariant(
+                          variants,
+                          "logout",
+                          "logout"
+                        )
+                      })}
                     >
-                      {"увайсці"}
-                    </div>
-                  </p.Stack>
-                </div>
+                      <div
+                        data-plasmic-name={"rectangle2"}
+                        data-plasmic-override={overrides.rectangle2}
+                        className={classNames(projectcss.all, sty.rectangle2)}
+                      />
 
-                <div
-                  data-plasmic-name={"facebookBtn"}
-                  data-plasmic-override={overrides.facebookBtn}
-                  className={classNames(projectcss.all, sty.facebookBtn)}
+                      <div
+                        data-plasmic-name={"rectangle1"}
+                        data-plasmic-override={overrides.rectangle1}
+                        className={classNames(projectcss.all, sty.rectangle1)}
+                      />
+
+                      <p.Stack
+                        as={"div"}
+                        data-plasmic-name={"frame2"}
+                        data-plasmic-override={overrides.frame2}
+                        hasGap={true}
+                        className={classNames(projectcss.all, sty.frame2)}
+                      >
+                        <p.PlasmicImg
+                          alt={""}
+                          className={classNames(sty.img___0RmIx)}
+                          displayHeight={"24px" as const}
+                          displayMaxHeight={"none" as const}
+                          displayMaxWidth={"100%" as const}
+                          displayMinHeight={"0" as const}
+                          displayMinWidth={"0" as const}
+                          displayWidth={"23.489px" as const}
+                          loading={"lazy" as const}
+                          src={{
+                            src: "/plasmic/siabry_roulette/images/group2.svg",
+                            fullWidth: 23.489,
+                            fullHeight: 24,
+                            aspectRatio: 1000000
+                          }}
+                        />
+
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__opcY7
+                          )}
+                        >
+                          {"увайсці"}
+                        </div>
+                      </p.Stack>
+                    </div>
+                  ) : null}
+                  {(hasVariant(variants, "logout", "logout") ? true : true) ? (
+                    <div
+                      data-plasmic-name={"facebookBtn"}
+                      data-plasmic-override={overrides.facebookBtn}
+                      className={classNames(projectcss.all, sty.facebookBtn, {
+                        [sty.facebookBtnlogout]: hasVariant(
+                          variants,
+                          "logout",
+                          "logout"
+                        )
+                      })}
+                    >
+                      <div
+                        data-plasmic-name={"group2"}
+                        data-plasmic-override={overrides.group2}
+                        className={classNames(projectcss.all, sty.group2)}
+                      >
+                        <div
+                          data-plasmic-name={"rectangle3"}
+                          data-plasmic-override={overrides.rectangle3}
+                          className={classNames(projectcss.all, sty.rectangle3)}
+                        />
+
+                        <div
+                          data-plasmic-name={"rectangle4"}
+                          data-plasmic-override={overrides.rectangle4}
+                          className={classNames(projectcss.all, sty.rectangle4)}
+                        />
+
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text___4XNq
+                          )}
+                        >
+                          {"увайсці"}
+                        </div>
+                      </div>
+
+                      <G4682Icon
+                        className={classNames(projectcss.all, sty.svg__xYNq)}
+                        role={"img"}
+                      />
+
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__qksx
+                        )}
+                      >
+                        {"за"}
+                      </div>
+
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__dsbnN,
+                          {
+                            [sty.textloading__dsbnNdC8Vr]: hasVariant(
+                              variants,
+                              "loading",
+                              "loading"
+                            ),
+                            [sty.textlogout__dsbnN0HqGl]: hasVariant(
+                              variants,
+                              "logout",
+                              "logout"
+                            )
+                          }
+                        )}
+                      >
+                        {"эйсбучыцца"}
+                      </div>
+                    </div>
+                  ) : null}
+                </p.Stack>
+              ) : null}
+              {(hasVariant(variants, "logout", "logout") ? true : true) ? (
+                <Button
+                  data-plasmic-name={"logoutBtn"}
+                  data-plasmic-override={overrides.logoutBtn}
+                  className={classNames("__wab_instance", sty.logoutBtn, {
+                    [sty.logoutBtnlogout]: hasVariant(
+                      variants,
+                      "logout",
+                      "logout"
+                    )
+                  })}
+                  color={"link" as const}
                 >
-                  <div
-                    data-plasmic-name={"group2"}
-                    data-plasmic-override={overrides.group2}
-                    className={classNames(projectcss.all, sty.group2)}
-                  >
-                    <div
-                      data-plasmic-name={"rectangle3"}
-                      data-plasmic-override={overrides.rectangle3}
-                      className={classNames(projectcss.all, sty.rectangle3)}
-                    />
-
-                    <div
-                      data-plasmic-name={"rectangle4"}
-                      data-plasmic-override={overrides.rectangle4}
-                      className={classNames(projectcss.all, sty.rectangle4)}
-                    />
-
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text___4XNq
-                      )}
-                    >
-                      {"увайсці"}
-                    </div>
-                  </div>
-
-                  <G4682Icon
-                    className={classNames(projectcss.all, sty.svg__xYNq)}
-                    role={"img"}
-                  />
-
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__qksx
-                    )}
-                  >
-                    {"за"}
-                  </div>
-
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__dsbnN
-                    )}
-                  >
-                    {"эйсбучыцца"}
-                  </div>
-                </div>
-              </p.Stack>
+                  {"Выйсці"}
+                </Button>
+              ) : null}
             </p.Stack>
+          ) : null}
+          {(hasVariant(variants, "loading", "loading") ? true : true) ? (
+            <div
+              data-plasmic-name={"loading"}
+              data-plasmic-override={overrides.loading}
+              className={classNames(projectcss.all, sty.loading, {
+                [sty.loadingloading]: hasVariant(variants, "loading", "loading")
+              })}
+            >
+              <p.PlasmicImg
+                alt={""}
+                className={classNames(sty.img__klTs, {
+                  [sty.imgloading__klTsDC8Vr]: hasVariant(
+                    variants,
+                    "loading",
+                    "loading"
+                  )
+                })}
+                displayHeight={"auto" as const}
+                displayMaxHeight={"none" as const}
+                displayMaxWidth={"100%" as const}
+                displayMinHeight={"0" as const}
+                displayMinWidth={"0" as const}
+                displayWidth={"50px" as const}
+                loading={"lazy" as const}
+                src={
+                  "https://04.cadwork.com/wp-content/uploads/2019/08/ajax-loader.gif" as const
+                }
+              />
+            </div>
           ) : null}
         </div>
       </div>
@@ -309,11 +441,12 @@ const PlasmicDescendants = {
     "rectangle2",
     "rectangle1",
     "frame2",
-    "img",
     "facebookBtn",
     "group2",
     "rectangle3",
-    "rectangle4"
+    "rectangle4",
+    "logoutBtn",
+    "loading"
   ],
   freeBox: [
     "freeBox",
@@ -325,11 +458,11 @@ const PlasmicDescendants = {
     "rectangle2",
     "rectangle1",
     "frame2",
-    "img",
     "facebookBtn",
     "group2",
     "rectangle3",
-    "rectangle4"
+    "rectangle4",
+    "logoutBtn"
   ],
   header: ["header", "logo", "group"],
   logo: ["logo", "group"],
@@ -340,21 +473,21 @@ const PlasmicDescendants = {
     "rectangle2",
     "rectangle1",
     "frame2",
-    "img",
     "facebookBtn",
     "group2",
     "rectangle3",
     "rectangle4"
   ],
-  googleBtn: ["googleBtn", "rectangle2", "rectangle1", "frame2", "img"],
+  googleBtn: ["googleBtn", "rectangle2", "rectangle1", "frame2"],
   rectangle2: ["rectangle2"],
   rectangle1: ["rectangle1"],
-  frame2: ["frame2", "img"],
-  img: ["img"],
+  frame2: ["frame2"],
   facebookBtn: ["facebookBtn", "group2", "rectangle3", "rectangle4"],
   group2: ["group2", "rectangle3", "rectangle4"],
   rectangle3: ["rectangle3"],
-  rectangle4: ["rectangle4"]
+  rectangle4: ["rectangle4"],
+  logoutBtn: ["logoutBtn"],
+  loading: ["loading"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -370,11 +503,12 @@ type NodeDefaultElementType = {
   rectangle2: "div";
   rectangle1: "div";
   frame2: "div";
-  img: typeof p.PlasmicImg;
   facebookBtn: "div";
   group2: "div";
   rectangle3: "div";
   rectangle4: "div";
+  logoutBtn: typeof Button;
+  loading: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -443,11 +577,12 @@ export const PlasmicSignIn = Object.assign(
     rectangle2: makeNodeComponent("rectangle2"),
     rectangle1: makeNodeComponent("rectangle1"),
     frame2: makeNodeComponent("frame2"),
-    img: makeNodeComponent("img"),
     facebookBtn: makeNodeComponent("facebookBtn"),
     group2: makeNodeComponent("group2"),
     rectangle3: makeNodeComponent("rectangle3"),
     rectangle4: makeNodeComponent("rectangle4"),
+    logoutBtn: makeNodeComponent("logoutBtn"),
+    loading: makeNodeComponent("loading"),
 
     // Metadata about props expected for PlasmicSignIn
     internalVariantProps: PlasmicSignIn__VariantProps,

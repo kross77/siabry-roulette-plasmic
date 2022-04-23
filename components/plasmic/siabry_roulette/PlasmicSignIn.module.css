@@ -124,6 +124,9 @@
   text-align: center;
   min-width: 0;
 }
+.textloading__fv9YsdC8Vr {
+  display: none;
+}
 .button {
   flex-direction: column;
   width: auto;
@@ -147,12 +150,20 @@
   > img {
   margin-top: 18px;
 }
+.buttonloading {
+  display: none;
+}
 .googleBtn {
   width: 159px;
   height: 53px;
   display: block;
   position: relative;
+  pointer-events: auto;
+  cursor: pointer;
   flex-shrink: 0;
+}
+.googleBtnlogout {
+  display: none;
 }
 .rectangle2 {
   background: rgba(250, 187, 4, 1);
@@ -203,7 +214,7 @@
   > img {
   margin-left: 2px;
 }
-.img {
+.img___0RmIx {
   position: relative;
   object-fit: cover;
   max-width: 100%;
@@ -212,10 +223,10 @@
   display: block !important;
   flex-shrink: 0;
 }
-.img > picture > img {
+.img___0RmIx > picture > img {
   object-fit: cover;
 }
-.img > .__wab_img-spacer > img {
+.img___0RmIx > .__wab_img-spacer > img {
   object-fit: cover;
 }
 .text__opcY7 {
@@ -234,7 +245,12 @@
   height: 53px;
   display: block;
   position: relative;
+  pointer-events: auto;
+  cursor: pointer;
   flex-shrink: 0;
+}
+.facebookBtnlogout {
+  display: none;
 }
 .group2 {
   width: 233px;
@@ -321,4 +337,51 @@
   top: 21.09%;
   left: 28.41%;
   transform: translate(0.277000000000001px, -0.42799999999999727px);
+}
+.logoutBtn:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+  display: none;
+}
+.logoutBtnlogout:global(.__wab_instance) {
+  display: flex;
+}
+.svg__xbnuS {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.svg__fRagp {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.loading {
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  display: none;
+  padding: 8px;
+}
+.loadingloading {
+  display: flex;
+}
+.img__klTs {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+  width: 50px;
+}
+.img__klTs > picture > img {
+  object-fit: cover;
+}
+.img__klTs > .__wab_img-spacer > img {
+  object-fit: cover;
 }
